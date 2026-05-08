@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Adaptor — Track 02 | Kurela Cognisive</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#7c4ee4;--pd:#5a35b0;--pl:#9d75f0;--pp:#c4b5fd;
+  --p10:rgba(124,78,228,.09);--p20:rgba(124,78,228,.16);--p40:rgba(124,78,228,.35);
+  --ink:#0d0820;--ink2:#2a1f4e;--ink3:#5a4a7a;--ink4:#9380b8;
+  --surface:#faf9ff;--surface2:#f3f0fd;
+  --border:rgba(255,255,255,.58);--border2:rgba(124,78,228,.2);
+  --green:#16a34a;--greenl:rgba(34,197,94,.12);--amber:#d97706;--amberl:rgba(245,158,11,.1);
+  --ff:'Plus Jakarta Sans',system-ui,sans-serif;
+  --blur:blur(22px);
+  --r-sm:10px;--r-md:16px;--r-lg:22px;--r-xl:30px;
+  --sh-g:0 8px 32px rgba(124,78,228,.14),0 2px 8px rgba(0,0,0,.05);
+  --sh-gd:0 20px 60px rgba(124,78,228,.18),0 4px 16px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--ff);color:var(--ink);line-height:1.6;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background:#f3effc;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 18% 8%,rgba(196,181,253,.5) 0%,transparent 62%),
+    radial-gradient(ellipse 50% 42% at 86% 7%,rgba(167,139,250,.28) 0%,transparent 58%),
+    radial-gradient(ellipse 48% 52% at 72% 94%,rgba(196,181,253,.38) 0%,transparent 60%),
+    radial-gradient(ellipse 38% 44% at 5% 84%,rgba(221,214,254,.42) 0%,transparent 55%);
+  min-height:100vh;
+}
+.glass{background:rgba(255,255,255,.72);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--border);box-shadow:var(--sh-g)}
+.gb{background:linear-gradient(rgba(255,255,255,.84),rgba(255,255,255,.84)) padding-box,linear-gradient(135deg,#7c4ee4,#c4b5fd 60%,#7c4ee4) border-box;border:1.5px solid transparent;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:var(--sh-gd)}
+.glass-p{background:linear-gradient(135deg,var(--p),var(--pd));border:none;box-shadow:0 12px 40px rgba(124,78,228,.4)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.72);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-bottom:1px solid var(--border);height:64px;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo-m{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--p),var(--pl));display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff;box-shadow:0 4px 12px rgba(124,78,228,.38)}
+.logo-t{font-weight:800;font-size:1rem;letter-spacing:-.03em}
+.logo-t em{font-style:normal;color:var(--p)}
+.nav-back{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:500;color:var(--ink3);text-decoration:none;transition:all .2s;padding:.4rem .9rem;border:1px solid var(--border2);border-radius:var(--r-sm);background:rgba(255,255,255,.6);backdrop-filter:var(--blur)}
+.nav-back:hover{color:var(--p);border-color:var(--p);background:rgba(255,255,255,.9)}
+.btn-nav{background:linear-gradient(135deg,var(--p),var(--pl));color:#fff;border:none;padding:.5rem 1.3rem;border-radius:var(--r-sm);font:700 .82rem var(--ff);cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;box-shadow:0 4px 16px rgba(124,78,228,.38)}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,78,228,.5)}
+
+/* HERO */
+.hero{min-height:88vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;overflow:hidden;position:relative;max-width:1180px;margin:0 auto;padding:6rem 2.5rem 5rem;gap:4rem}
+.track-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.68);backdrop-filter:var(--blur);border:1px solid rgba(124,78,228,.28);border-radius:100px;padding:6px 14px;font-size:.65rem;color:var(--p);letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:1.75rem;box-shadow:0 2px 12px rgba(124,78,228,.12)}
+.pop-badge{background:linear-gradient(135deg,var(--p),var(--pl));color:#fff;font-size:.55rem;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:.06em}
+h1{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:800;line-height:1.06;letter-spacing:-.05em;color:var(--ink);margin-bottom:1.5rem}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--p),var(--pl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--ink3);line-height:1.8;max-width:440px;margin-bottom:2.5rem}
+.hero-sub strong{color:var(--ink2);font-weight:600}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-primary{background:linear-gradient(135deg,var(--p),var(--pl));color:#fff;border:none;padding:14px 28px;border-radius:var(--r-md);font:700 .95rem var(--ff);cursor:pointer;box-shadow:0 6px 24px rgba(124,78,228,.42);transition:all .28s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(124,78,228,.55)}
+.btn-ghost{background:rgba(255,255,255,.65);backdrop-filter:var(--blur);color:var(--ink2);border:1.5px solid var(--border2);padding:13px 24px;border-radius:var(--r-md);font:600 .95rem var(--ff);cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{border-color:var(--p);color:var(--p);background:rgba(255,255,255,.9)}
+.hero-kpi{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(124,78,228,.14)}
+.kpi-val{font-size:1.8rem;font-weight:800;letter-spacing:-.05em;color:var(--p);line-height:1}
+.kpi-lbl{font-size:.7rem;color:var(--ink4);margin-top:5px}
+
+/* HERO RIGHT — two-phase card */
+.hero-right{position:relative}
+.phase-preview{border-radius:var(--r-xl);padding:2rem;width:100%;max-width:380px}
+.pp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.pp-title{font-size:.65rem;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.1em}
+.pp-status{display:flex;align-items:center;gap:5px;font-size:.62rem;font-weight:700;color:var(--green);background:var(--greenl);border:1px solid rgba(34,197,94,.25);padding:3px 9px;border-radius:100px}
+.pp-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.4s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.phase-block{border-radius:var(--r-md);padding:1.1rem 1.2rem;margin-bottom:10px;border:1px solid rgba(124,78,228,.14);background:rgba(124,78,228,.05);transition:all .2s}
+.phase-block:hover{border-color:rgba(124,78,228,.28);background:rgba(124,78,228,.09);transform:translateX(4px)}
+.phase-block:last-child{margin-bottom:0}
+.pb-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem}
+.pb-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--pl));display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff;flex-shrink:0}
+.pb-label{font-size:.6rem;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:.1em}
+.pb-name{font-size:.9rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.pb-items{display:flex;flex-direction:column;gap:5px;padding-left:2.5rem}
+.pb-item{font-size:.75rem;color:var(--ink3);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.pb-item::before{content:'→';color:var(--p);font-weight:700;flex-shrink:0;margin-top:1px}
+.pp-footer{margin-top:12px;background:rgba(255,255,255,.7);border-radius:var(--r-sm);padding:.85rem 1rem;font-size:.78rem;color:var(--ink3);line-height:1.55;border:1px solid var(--border)}
+.pp-footer strong{color:var(--p);font-weight:700}
+
+/* SECTIONS */
+.section{padding:5.5rem 2.5rem;max-width:1180px;margin:0 auto}
+.section-full{padding:5.5rem 0}
+.section-full .section-inner{max-width:1180px;margin:0 auto;padding:0 2.5rem}
+.bg-light{background:rgba(255,255,255,.65);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:.64rem;color:var(--p);letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.9rem}
+.chip::before{content:'';width:18px;height:2px;background:linear-gradient(90deg,var(--p),var(--pl));border-radius:1px}
+.sec-title{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:.85rem;color:var(--ink)}
+.sec-title em{font-style:normal;background:linear-gradient(135deg,var(--p),var(--pl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-sub{font-size:1rem;color:var(--ink3);line-height:1.75;max-width:540px;margin-bottom:3rem}
+
+/* TWO PHASES */
+.phases-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.ph-card{border-radius:var(--r-xl);padding:2.25rem;transition:all .3s;position:relative;overflow:hidden}
+.ph-card:hover{transform:translateY(-5px);box-shadow:var(--sh-gd)}
+.ph-num-big{font-size:5rem;font-weight:800;letter-spacing:-.05em;line-height:1;opacity:.07;position:absolute;top:.5rem;right:1.5rem;color:var(--p)}
+.ph-icon{width:54px;height:54px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem;background:rgba(124,78,228,.1);border:1px solid rgba(124,78,228,.18)}
+.ph-label{font-size:.62rem;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.4rem}
+.ph-card h3{font-size:1.3rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.65rem;color:var(--ink)}
+.ph-card p{font-size:.88rem;color:var(--ink3);line-height:1.7;margin-bottom:1.25rem}
+.ph-bullets{display:flex;flex-direction:column;gap:.65rem}
+.ph-bullet{display:flex;align-items:flex-start;gap:.65rem;font-size:.84rem;color:var(--ink2);line-height:1.5}
+.ph-dot{width:20px;height:20px;border-radius:6px;background:rgba(124,78,228,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--p);font-weight:800;flex-shrink:0;margin-top:1px}
+.ph-card.accent-card{background:linear-gradient(135deg,var(--p) 0%,var(--pd) 100%)}
+.ph-card.accent-card .ph-label{color:rgba(255,255,255,.65)}
+.ph-card.accent-card h3,.ph-card.accent-card p{color:#fff}
+.ph-card.accent-card p{color:rgba(255,255,255,.78)}
+.ph-card.accent-card .ph-bullet{color:rgba(255,255,255,.88)}
+.ph-card.accent-card .ph-dot{background:rgba(255,255,255,.18);color:#fff}
+.ph-card.accent-card .ph-num-big{color:#fff;opacity:.06}
+.ph-card.accent-card .ph-icon{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.25)}
+
+/* INTERN MODE BENTO */
+.intern-bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.ib{border-radius:var(--r-xl);padding:1.75rem;transition:all .3s;overflow:hidden}
+.ib:hover{transform:translateY(-4px);box-shadow:var(--sh-gd)}
+.ib.s7{grid-column:span 7}
+.ib.s5{grid-column:span 5}
+.ib.s4{grid-column:span 4}
+.ib.s8{grid-column:span 8}
+.ib.s12{grid-column:span 12}
+.ib-icon{width:44px;height:44px;border-radius:var(--r-sm);background:rgba(124,78,228,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}
+.ib h4{font-size:.95rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.02em;color:var(--ink)}
+.ib p{font-size:.82rem;color:var(--ink3);line-height:1.6}
+.ib.accent-ib{background:linear-gradient(135deg,var(--p),var(--pd))}
+.ib.accent-ib .ib-icon{background:rgba(255,255,255,.18)}
+.ib.accent-ib h4,.ib.accent-ib p{color:#fff}
+.ib.accent-ib p{color:rgba(255,255,255,.78)}
+.task-log{display:flex;flex-direction:column;gap:8px;margin-top:.75rem}
+.tl-row{display:flex;align-items:center;gap:.75rem;padding:.65rem .85rem;border-radius:var(--r-sm);background:rgba(255,255,255,.55);border:1px solid var(--border)}
+.tl-week{font-size:.6rem;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:.08em;width:52px;flex-shrink:0}
+.tl-task{font-size:.78rem;color:var(--ink2);flex:1;line-height:1.35}
+.tl-status{font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:100px;flex-shrink:0}
+.tl-status.done{background:var(--greenl);color:var(--green);border:1px solid rgba(34,197,94,.25)}
+.tl-status.review{background:var(--amberl);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+.mentor-card{display:flex;align-items:center;gap:.85rem;padding:1rem;background:rgba(255,255,255,.55);border:1px solid var(--border);border-radius:var(--r-md);margin-top:.75rem}
+.mentor-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--pl));display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0}
+.mentor-name{font-size:.82rem;font-weight:700;color:var(--ink)}
+.mentor-co{font-size:.72rem;color:var(--ink3);margin-top:1px}
+.stat-big{font-size:2.4rem;font-weight:800;letter-spacing:-.05em;color:var(--p);line-height:1;margin-bottom:.35rem}
+.stat-lbl{font-size:.72rem;color:var(--ink3)}
+.sprint-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem}
+.sp{background:rgba(124,78,228,.09);color:var(--ink2);border:1px solid rgba(124,78,228,.16);border-radius:var(--r-sm);padding:5px 12px;font-size:.78rem;font-weight:600;transition:all .2s;cursor:default}
+.sp:hover{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* DELIVERABLES */
+.dlv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dlv-card{border-radius:var(--r-xl);padding:1.75rem;transition:all .3s;position:relative;overflow:hidden}
+.dlv-card:hover{transform:translateY(-4px);box-shadow:var(--sh-gd)}
+.dlv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--p10);transition:background .3s}
+.dlv-card:hover::after{background:linear-gradient(90deg,var(--p),var(--pl))}
+.dlv-icon{width:46px;height:46px;border-radius:var(--r-sm);background:rgba(124,78,228,.1);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1rem}
+.dlv-card h4{font-size:.95rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.02em;color:var(--ink)}
+.dlv-card p{font-size:.82rem;color:var(--ink3);line-height:1.6}
+.dlv-tag{display:inline-block;background:rgba(124,78,228,.09);color:var(--p);border:1px solid rgba(124,78,228,.18);border-radius:var(--r-sm);padding:3px 9px;font-size:.62rem;font-weight:700;margin-top:.85rem;letter-spacing:.04em}
+.dlv-card.span2{grid-column:span 2}
+.dlv-card.wide{background:linear-gradient(135deg,var(--p),var(--pd))}
+.dlv-card.wide::after{display:none}
+.dlv-card.wide .dlv-icon{background:rgba(255,255,255,.18)}
+.dlv-card.wide h4,.dlv-card.wide p{color:#fff}
+.dlv-card.wide p{color:rgba(255,255,255,.8)}
+.dlv-card.wide .dlv-tag{background:rgba(255,255,255,.18);color:#fff;border-color:transparent}
+
+/* WHO / FIT */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1.5rem}
+.who-card{border-radius:var(--r-xl);padding:1.75rem;transition:all .3s}
+.who-card:hover{transform:translateY(-5px);box-shadow:var(--sh-gd)}
+.who-icon{font-size:1.5rem;margin-bottom:.85rem}
+.who-card h4{font-size:.92rem;font-weight:800;margin-bottom:.45rem;letter-spacing:-.02em;color:var(--ink)}
+.who-card p{font-size:.82rem;color:var(--ink3);line-height:1.65}
+.fit-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fit-block{border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border2)}
+.fit-block.yes{background:rgba(255,255,255,.72);backdrop-filter:var(--blur)}
+.fit-block.no{background:rgba(255,255,255,.5);backdrop-filter:var(--blur)}
+.fit-head{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.25rem;display:flex;align-items:center;gap:6px}
+.fit-head.y{color:var(--green)}
+.fit-head.n{color:#ef4444}
+.fit-row{display:flex;gap:.75rem;margin-bottom:.9rem;align-items:flex-start}
+.fit-ic{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0}
+.fit-ic.y{background:rgba(34,197,94,.12);color:var(--green)}
+.fit-ic.n{background:rgba(239,68,68,.1);color:#ef4444}
+.fit-row p{font-size:.875rem;color:var(--ink3);line-height:1.55}
+
+/* CTA */
+.cta-section{background:var(--ink);padding:6.5rem 2.5rem;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 80% at 20% 50%,rgba(124,78,228,.28) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 85% 30%,rgba(157,117,240,.14) 0%,transparent 60%);pointer-events:none}
+.cta-inner{max-width:640px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.cta-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(124,78,228,.2);border:1px solid rgba(124,78,228,.4);border-radius:100px;padding:5px 14px;font-size:.65rem;color:var(--pl);letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:1.5rem}
+.cta-section h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1rem;line-height:1.1;color:#fff}
+.cta-section h2 em{font-style:normal;color:var(--pl)}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--p),var(--pl));color:#fff;border:none;padding:1rem 2rem;border-radius:var(--r-md);font:700 1rem var(--ff);cursor:pointer;transition:all .28s;text-decoration:none;box-shadow:0 6px 24px rgba(124,78,228,.42)}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(124,78,228,.55)}
+.btn-cta-g{display:inline-flex;align-items:center;background:transparent;color:rgba(255,255,255,.7);border:1.5px solid rgba(255,255,255,.2);padding:1rem 1.75rem;border-radius:var(--r-md);font:600 1rem var(--ff);cursor:pointer;transition:all .25s;text-decoration:none}
+.btn-cta-g:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.trust-strip{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.tr-i{display:flex;align-items:center;gap:6px;font-size:.68rem;color:rgba(255,255,255,.38)}
+.tr-i span{color:#4ade80;font-weight:700}
+
+/* FOOTER */
+footer{background:#08051a;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.06)}
+footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
+.flinks{display:flex;gap:1.5rem}
+.flinks a{color:rgba(255,255,255,.3);text-decoration:none;font-size:.75rem;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,.8)}
+.flogo{font-weight:800;color:rgba(255,255,255,.72);font-size:.95rem}
+.flogo em{font-style:normal;background:linear-gradient(135deg,var(--pl),var(--pp));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .58s ease,transform .58s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media(max-width:900px){
+  .hero,.phases-layout,.fit-wrap,.dlv-grid,.who-grid{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .intern-bento .ib{grid-column:span 12!important}
+  .dlv-card.span2{grid-column:span 1}
+  nav .nav-links-full{display:none}
+  .section{padding:4rem 1.5rem}
+  .hero{padding:4.5rem 1.5rem 3.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-m">KC</div>
+    <span class="logo-t"><em>Kurela</em>Cognisive</span>
+  </a>
+  <a href="index.html" class="nav-back">← All Tracks</a>
+  <a href="index.html#register" class="btn-nav">Register Now →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="track-chip reveal">Track 02 — The Adaptor <span class="pop-badge">Most Popular</span></div>
+    <h1 class="reveal d1">
+      Build It.<br>
+      Then Work <em>Inside It.</em>
+    </h1>
+    <p class="hero-sub reveal d2">
+      The Adaptor is a two-phase program. You start by <strong>building a real project</strong> from scratch — then you switch into intern mode, where you complete structured tasks inside that same project, just like a junior on a real team.
+    </p>
+    <div class="cta-row reveal d3">
+      <a href="index.html#register" class="btn-primary">Register for This Track →</a>
+      <a href="#phases" class="btn-ghost">See How It Works ↓</a>
+    </div>
+    <div class="hero-kpi reveal">
+      <div><div class="kpi-val">3</div><div class="kpi-lbl">Months total</div></div>
+      <div><div class="kpi-val">2</div><div class="kpi-lbl">Distinct phases</div></div>
+      <div><div class="kpi-val">1</div><div class="kpi-lbl">Industry mentor</div></div>
+    </div>
+  </div>
+
+  <!-- HERO RIGHT -->
+  <div class="hero-right reveal d1">
+    <div class="phase-preview gb">
+      <div class="pp-header">
+        <div class="pp-title">Your 3-Month Journey</div>
+        <div class="pp-status">Active</div>
+      </div>
+      <div class="phase-block">
+        <div class="pb-top">
+          <div class="pb-num">1</div>
+          <div>
+            <div class="pb-label">Phase 01 · Weeks 1–4</div>
+            <div class="pb-name">Build Your Project</div>
+          </div>
+        </div>
+        <div class="pb-items">
+          <div class="pb-item">Propose, plan, and build a complete project</div>
+          <div class="pb-item">You own the scope, the stack, the decisions</div>
+          <div class="pb-item">Submit your project + design document</div>
+        </div>
+      </div>
+      <div class="phase-block">
+        <div class="pb-top">
+          <div class="pb-num">2</div>
+          <div>
+            <div class="pb-label">Phase 02 · Weeks 5–12</div>
+            <div class="pb-name">Intern Mode</div>
+          </div>
+        </div>
+        <div class="pb-items">
+          <div class="pb-item">Receive structured tasks assigned by your mentor</div>
+          <div class="pb-item">Work in weekly sprints with defined deliverables</div>
+          <div class="pb-item">Every completed task is logged on your profile</div>
+        </div>
+      </div>
+      <div class="pp-footer"><strong>You walk away with:</strong> Internship certificate + verified project + task completion record + mentor sign-off</div>
+    </div>
+  </div>
+</div>
+
+<!-- TWO PHASES -->
+<div class="bg-light">
+<div class="section" id="phases">
+  <div class="chip reveal">The two phases</div>
+  <h2 class="sec-title reveal d1">Different phases.<br><em>One continuous record.</em></h2>
+  <p class="sec-sub reveal d2">The Adaptor doesn't ask you to do an internship in isolation. It builds one on top of something you've already created — so everything is connected and verifiable from day one.</p>
+
+  <div class="phases-layout">
+    <div class="ph-card glass reveal">
+      <div class="ph-num-big">01</div>
+      <div class="ph-icon">🏗️</div>
+      <div class="ph-label">Phase 01 · Weeks 1–4</div>
+      <h3>Build Your Project</h3>
+      <p>You start by building a real project in a domain you choose. Any domain — software, data, hardware, ML, security, anything. You own every decision: the scope, the architecture, the tech.</p>
+      <div class="ph-bullets">
+        <div class="ph-bullet"><div class="ph-dot">→</div>Write a project plan and design document before you build</div>
+        <div class="ph-bullet"><div class="ph-dot">→</div>Build something functional and demonstrable — not a prototype, not slides</div>
+        <div class="ph-bullet"><div class="ph-dot">→</div>Submit your project and walkthrough video for review</div>
+        <div class="ph-bullet"><div class="ph-dot">→</div>Phase 01 is reviewed and verified before Phase 02 begins</div>
+      </div>
+    </div>
+
+    <div class="ph-card accent-card reveal d1">
+      <div class="ph-num-big">02</div>
+      <div class="ph-icon">⚡</div>
+      <div class="ph-label">Phase 02 · Weeks 5–12</div>
+      <h3>Intern Mode</h3>
+      <p>Once your project is verified, you shift into intern mode. Your mentor now assigns you tasks inside your own project — adding features, fixing issues, improving documentation, extending functionality.</p>
+      <div class="ph-bullets">
+        <div class="ph-bullet"><div class="ph-dot">→</div>Tasks are assigned weekly with clear scope and acceptance criteria</div>
+        <div class="ph-bullet"><div class="ph-dot">→</div>You work within constraints you didn't set — the way real junior roles work</div>
+        <div class="ph-bullet"><div class="ph-dot">→</div>Every completed task is logged to your verified profile in real time</div>
+        <div class="ph-bullet"><div class="ph-dot">→</div>Mentor reviews and signs off each sprint before the next begins</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- INTERN MODE BENTO -->
+<div class="section" id="intern-mode">
+  <div class="chip reveal">What intern mode looks like</div>
+  <h2 class="sec-title reveal d1">Structured work.<br><em>Not busywork.</em></h2>
+  <p class="sec-sub reveal d2">Intern mode is designed to simulate how real tasks reach junior engineers — defined scope, real deadlines, someone reviewing your output. Here's what it actually involves.</p>
+
+  <div class="intern-bento">
+
+    <!-- Task log -->
+    <div class="ib glass s7 reveal">
+      <div class="ib-icon">📋</div>
+      <h4>Weekly Task Log</h4>
+      <p>Each week you receive 1–2 tasks. Every task you complete is permanently logged to your profile with the outcome and mentor sign-off.</p>
+      <div class="task-log">
+        <div class="tl-row">
+          <div class="tl-week">Week 5</div>
+          <div class="tl-task">Add input validation to user registration flow</div>
+          <div class="tl-status done">Done</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-week">Week 6</div>
+          <div class="tl-task">Write unit tests for the authentication module</div>
+          <div class="tl-status done">Done</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-week">Week 7</div>
+          <div class="tl-task">Refactor API response structure for consistency</div>
+          <div class="tl-status done">Done</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-week">Week 8</div>
+          <div class="tl-task">Add pagination to the data listing endpoint</div>
+          <div class="tl-status review">In Review</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mentor -->
+    <div class="ib glass s5 reveal d1">
+      <div class="ib-icon">👤</div>
+      <h4>Your Industry Mentor</h4>
+      <p>Every Adaptor student is paired with an industry mentor who assigns tasks, reviews your output, and signs off each sprint. Not just an advisor — an active reviewer.</p>
+      <div class="mentor-card">
+        <div class="mentor-av">RK</div>
+        <div>
+          <div class="mentor-name">Rohan Kapoor</div>
+          <div class="mentor-co">Senior Engineer · Bangalore</div>
+        </div>
+      </div>
+      <div class="mentor-card" style="margin-top:8px">
+        <div class="mentor-av" style="background:linear-gradient(135deg,#16a34a,#059669)">PS</div>
+        <div>
+          <div class="mentor-name">Preethi Subramanian</div>
+          <div class="mentor-co">Product Engineer · Chennai</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="ib accent-ib s4 reveal">
+      <div class="ib-icon">📊</div>
+      <h4>Tasks per Sprint</h4>
+      <p style="margin-bottom:.75rem">On average, you complete 6–8 tasks over the 8-week intern phase. Each one reviewed.</p>
+      <div class="stat-big">8</div>
+      <div class="stat-lbl">Avg. tasks completed per student</div>
+    </div>
+
+    <!-- Sprint examples -->
+    <div class="ib glass s8 reveal d1">
+      <div class="ib-icon">🔄</div>
+      <h4>What Tasks Actually Look Like</h4>
+      <p>Tasks are assigned based on your project and domain. They're specific, scoped, and match real junior-level work — not vague assignments.</p>
+      <div class="sprint-pills">
+        <span class="sp">Add error handling</span>
+        <span class="sp">Write test cases</span>
+        <span class="sp">Refactor a module</span>
+        <span class="sp">Improve performance</span>
+        <span class="sp">Update documentation</span>
+        <span class="sp">Fix reported bugs</span>
+        <span class="sp">Add a new feature</span>
+        <span class="sp">Review + improve UX flow</span>
+        <span class="sp">Extend an existing API</span>
+        <span class="sp">Set up logging / monitoring</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DELIVERABLES -->
+<div class="bg-light">
+<div class="section" id="deliverables">
+  <div class="chip reveal">What you submit</div>
+  <h2 class="sec-title reveal d1">Five deliverables.<br><em>All permanent. All verified.</em></h2>
+  <p class="sec-sub reveal d2">Everything you produce across both phases is reviewed, logged, and attached to your public profile once approved.</p>
+
+  <div class="dlv-grid">
+
+    <div class="dlv-card wide span2 reveal">
+      <div class="dlv-icon">🌐</div>
+      <h4>Verified Public Portfolio Page</h4>
+      <p>Your Kurela Cognisive profile is a live, shareable URL — showing your project, your task completion log from intern mode, your verified status, and your mentor's sign-off. Recruiters visit it, not just read about it.</p>
+      <div class="dlv-tag">Permanent · Publicly Visible</div>
+    </div>
+
+    <div class="dlv-card glass reveal">
+      <div class="dlv-icon">🏗️</div>
+      <h4>Verified Project</h4>
+      <p>Your Phase 01 project — reviewed, verified, and linked from your profile with your design document and walkthrough video.</p>
+      <div class="dlv-tag">Reviewed Before Phase 02</div>
+    </div>
+
+    <div class="dlv-card gb reveal d1">
+      <div class="dlv-icon">📋</div>
+      <h4>Task Completion Record</h4>
+      <p>A full log of every intern-mode task you completed — with the task description, your output, and your mentor's review note against each one.</p>
+      <div class="dlv-tag">Updated Weekly in Phase 02</div>
+    </div>
+
+    <div class="dlv-card glass reveal">
+      <div class="dlv-icon">🎓</div>
+      <h4>Internship Certificate</h4>
+      <p>A verified internship certificate issued at the end of Phase 02 — tied to your task log and mentor sign-off, not just a completion stamp.</p>
+      <div class="dlv-tag">Issued After Final Sprint</div>
+    </div>
+
+    <div class="dlv-card glass reveal d1">
+      <div class="dlv-icon">✍️</div>
+      <h4>Mentor Sign-off Letter</h4>
+      <p>A professional confirmation from your industry mentor — verifying your participation, the tasks you completed, and the quality of your output.</p>
+      <div class="dlv-tag">From Your Assigned Mentor</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- WHO IS THIS FOR -->
+<div class="section" id="who">
+  <div class="chip reveal">Who it's for</div>
+  <h2 class="sec-title reveal d1">Built for students who want<br><em>more than just a project.</em></h2>
+  <p class="sec-sub reveal d2">The Adaptor is for students who know a solo project isn't quite enough — and want structured internship experience on top of it, without waiting for a company to give them a chance.</p>
+
+  <div class="who-grid">
+    <div class="who-card glass reveal">
+      <div class="who-icon">🎯</div>
+      <h4>You're applying for your first job or internship soon</h4>
+      <p>You need something stronger than a GitHub link. The Adaptor gives you a verified project plus a documented internship task record — both shareable in the same profile URL.</p>
+    </div>
+    <div class="who-card gb reveal d1">
+      <div class="who-icon">🔄</div>
+      <h4>You want to know how real team work actually feels</h4>
+      <p>Working on tasks someone else assigns — within a scope you didn't set — is fundamentally different from building your own project. This gives you that experience before day one at a company.</p>
+    </div>
+    <div class="who-card glass reveal d2">
+      <div class="who-icon">📈</div>
+      <h4>You want internship experience without depending on one</h4>
+      <p>You've applied for internships and been rejected for not having experience. The Adaptor breaks that loop by giving you structured, mentor-supervised, verified work experience you can point to.</p>
+    </div>
+  </div>
+
+  <div class="fit-wrap" style="margin-top:1.25rem">
+    <div class="fit-block yes reveal">
+      <div class="fit-head y"><span>✓</span> A great fit if you…</div>
+      <div class="fit-row"><div class="fit-ic y">✓</div><p>Want both a verified project and internship experience on your record</p></div>
+      <div class="fit-row"><div class="fit-ic y">✓</div><p>Are applying for jobs or internships in the next 3–6 months</p></div>
+      <div class="fit-row"><div class="fit-ic y">✓</div><p>Want to understand how structured task-based work actually feels</p></div>
+      <div class="fit-row"><div class="fit-ic y">✓</div><p>Can commit to working through a 3-month structured program</p></div>
+    </div>
+    <div class="fit-block no reveal d1">
+      <div class="fit-head n"><span>✗</span> Consider a different track if…</div>
+      <div class="fit-row"><div class="fit-ic n">✗</div><p>You only want a project verified, with no internship experience (try Track 01)</p></div>
+      <div class="fit-row"><div class="fit-ic n">✗</div><p>You want deep 6-month mentorship and are targeting a PPO (try Track 03)</p></div>
+      <div class="fit-row"><div class="fit-ic n">✗</div><p>You can't commit to working consistently over 12 weeks</p></div>
+      <div class="fit-row"><div class="fit-ic n">✗</div><p>You haven't started learning your domain yet</p></div>
+    </div>
+  </div>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.25rem" class="reveal d2">
+    <a href="architect.html" class="btn-ghost" style="font-size:.875rem;padding:10px 20px">Track 01: The Architect →</a>
+    <a href="strategist.html" class="btn-ghost" style="font-size:.875rem;padding:10px 20px">Track 03: The Strategist →</a>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-chip">Track 02 — The Adaptor · 2026 Cohort</div>
+    <h2>Build it.<br>Work inside it.<br><em>Prove both.</em></h2>
+    <p>Register for The Adaptor, get matched with a mentor, and walk away with a verified project and a real internship task record — in 3 months.</p>
+    <div class="cta-btns">
+      <a href="index.html#register" class="btn-cta">Register for The Adaptor →</a>
+      <a href="index.html#tracks" class="btn-cta-g">Compare All Tracks</a>
+    </div>
+    <div class="trust-strip">
+      <div class="tr-i"><span>✓</span> Free to start</div>
+      <div class="tr-i"><span>✓</span> Mentor assigned within 48 hrs</div>
+      <div class="tr-i"><span>✓</span> Any domain accepted</div>
+      <div class="tr-i"><span>✓</span> 3-month structured program</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo"><em>Kurela</em>Cognisive<span style="color:var(--pp)">.</span></div>
+  <div class="flinks">
+    <a href="index.html">← All Tracks</a>
+    <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+  </div>
+  <p>© 2026 Kurela Cognisive</p>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

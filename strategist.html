@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Strategist — Track 03 | Kurela Cognisive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#12082a;
+  --ink2:#2d1a5e;
+  --ink3:#5a4580;
+  --ink4:#9b8dbf;
+  --cream:#f8f6ff;
+  --cream2:#f0ecfc;
+  --cream3:#e4dcf8;
+  --amber:#7c4ee4;
+  --amber-light:#ede8fc;
+  --amber-mid:#9a72eb;
+  --gold:#a87de8;
+  --purple:#7c4ee4;
+  --purple-light:#ede8fc;
+  --moss:#3a4e5e;
+  --moss-light:#dce8ee;
+  --border:rgba(124,78,228,0.12);
+  --border2:rgba(124,78,228,0.22);
+  --ff-display:'Plus Jakarta Sans',sans-serif;
+  --ff-body:'Plus Jakarta Sans',sans-serif;
+  --r-sm:6px;--r-md:12px;--r-lg:18px;--r-xl:26px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:99;background:rgba(248,246,255,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:var(--ff-body);font-size:1.1rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.02em}
+.logo em{font-style:normal;color:var(--amber);font-weight:800}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.82rem;color:var(--ink3);text-decoration:none;font-weight:500;letter-spacing:0.02em;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--ink);color:var(--cream);border:none;border-radius:var(--r-sm);padding:.5rem 1.35rem;font-family:var(--ff-body);font-size:.82rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--purple)}
+
+/* ── HERO ── */
+.hero{min-height:96vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;overflow:hidden;position:relative}
+.hero-left{padding:7rem 4rem 7rem 5rem;position:relative;z-index:1}
+.hero-right{background:var(--cream2);height:100%;display:flex;align-items:center;justify-content:center;padding:5rem 4rem;position:relative;overflow:hidden}
+.hero-right::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 60% at 30% 40%,rgba(124,78,228,.12) 0%,transparent 65%),
+  radial-gradient(ellipse 50% 40% at 80% 80%,rgba(168,125,232,.09) 0%,transparent 55%)}
+
+.hero-chapter{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1.75rem}
+.hero-chapter::before{content:'';width:28px;height:1px;background:var(--amber)}
+.hero h1{font-family:var(--ff-body);font-size:clamp(3rem,5.5vw,4.5rem);font-weight:800;line-height:1.06;letter-spacing:-.04em;color:var(--ink);margin-bottom:1.5rem}
+.hero h1 i{font-style:normal;color:var(--amber);font-weight:300;opacity:.85}
+.hero-sub{font-size:1rem;color:var(--ink3);line-height:1.75;max-width:420px;font-weight:400;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;align-items:center}
+.btn-primary{background:var(--amber);color:#fff;border:none;border-radius:var(--r-md);padding:.9rem 2.2rem;font-family:var(--ff-body);font-size:.95rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 4px 20px rgba(124,78,228,.35)}
+.btn-primary:hover{background:#5a30c0;transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,78,228,.45)}
+.btn-outline{background:transparent;color:var(--ink2);border:1.5px solid var(--border);border-radius:var(--r-md);padding:.85rem 1.8rem;font-family:var(--ff-body);font-size:.95rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber)}
+.hero-proof{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.proof-num{font-family:var(--ff-body);font-size:2rem;font-weight:700;color:var(--amber);letter-spacing:-.04em;line-height:1}
+.proof-label{font-size:.75rem;color:var(--ink4);margin-top:4px;letter-spacing:.02em}
+
+/* Hero right — transformation card */
+.transform-card{background:var(--cream);border:1px solid var(--border2);border-radius:var(--r-xl);padding:2.5rem;width:100%;max-width:380px;position:relative;z-index:1}
+.tc-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink4);margin-bottom:1.5rem}
+.tc-states{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;margin-bottom:2rem}
+.tc-state{padding:1.25rem;border-radius:var(--r-md);text-align:center}
+.tc-state.before{background:var(--cream2);border:1px dashed rgba(18,8,42,.12)}
+.tc-state.after{background:var(--amber-light);border:1px solid rgba(124,78,228,.25)}
+.tc-state-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.tc-state.before .tc-state-label{color:var(--ink4)}
+.tc-state.after .tc-state-label{color:var(--amber)}
+.tc-state-val{font-family:var(--ff-body);font-size:1.1rem;font-weight:700;line-height:1.2}
+.tc-state.before .tc-state-val{color:var(--ink3)}
+.tc-state.after .tc-state-val{color:var(--ink)}
+.tc-arrow{font-size:1.5rem;color:var(--amber);text-align:center}
+.tc-skills{display:flex;flex-direction:column;gap:8px}
+.tc-skill{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--ink2)}
+.tc-skill-bar{flex:1;height:4px;background:var(--cream3);border-radius:100px;overflow:hidden}
+.tc-skill-fill{height:100%;background:linear-gradient(90deg,var(--amber),#b89af0);border-radius:100px}
+.tc-note{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--ink4);font-style:italic;text-align:center}
+
+/* ── SECTION WRAPPERS ── */
+.section{padding:6.5rem 2.5rem}
+.section-inner{max-width:1140px;margin:0 auto}
+.section-alt{background:var(--cream2)}
+.section-dark{background:var(--ink);color:var(--cream)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--amber)}
+.section-title{font-family:var(--ff-body);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.04em;color:var(--ink);line-height:1.1;margin-bottom:1rem}
+.section-title i{font-style:normal;color:var(--amber);font-weight:300}
+.section-title.light{color:var(--cream)}
+.section-body{font-size:1rem;color:var(--ink3);line-height:1.75;max-width:540px;font-weight:400}
+.section-body.light{color:rgba(250,247,242,.65)}
+
+/* ── TRANSFORMATION STORY ── */
+.story-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:3.5rem}
+.story-card{border-radius:var(--r-lg);padding:2rem;position:relative;overflow:hidden}
+.story-card.before{background:var(--cream2);border:1px solid var(--border)}
+.story-card.during{background:var(--amber-light);border:1px solid rgba(124,78,228,.25)}
+.story-card.after{background:var(--ink);color:var(--cream)}
+.story-card-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.25rem;opacity:.65}
+.story-card.after .story-card-tag{color:var(--amber-mid);opacity:1}
+.story-card h3{font-family:var(--ff-body);font-size:1.4rem;font-weight:700;line-height:1.2;margin-bottom:.75rem;letter-spacing:-.02em}
+.story-card.after h3{color:var(--cream)}
+.story-card p{font-size:.875rem;line-height:1.7;opacity:.8}
+.story-card.after p{color:rgba(250,247,242,.7);opacity:1}
+.story-list{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:7px}
+.story-list li{font-size:.8rem;display:flex;align-items:flex-start;gap:8px;opacity:.75}
+.story-list li::before{content:'—';color:var(--amber);flex-shrink:0;margin-top:1px}
+.story-card.after .story-list li{opacity:.8;color:var(--cream)}
+.story-card.after .story-list li::before{color:var(--amber-mid)}
+.story-connector{display:none}
+
+/* ── GROWTH TIMELINE ── */
+.timeline-wrap{margin-top:4rem;position:relative}
+.timeline-track{display:flex;align-items:flex-start;gap:0;position:relative}
+.timeline-track::before{content:'';position:absolute;top:28px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cream3) 0%,var(--amber) 50%,var(--ink) 100%);z-index:0}
+.tl-month{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;padding:0 .5rem}
+.tl-dot{width:18px;height:18px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--cream3);margin-bottom:1rem;flex-shrink:0;transition:transform .2s}
+.tl-month:hover .tl-dot{transform:scale(1.3)}
+.tl-month.m1 .tl-dot{background:#d8cef8}
+.tl-month.m2 .tl-dot{background:#b89af0}
+.tl-month.m3 .tl-dot{background:var(--amber-mid)}
+.tl-month.m4 .tl-dot{background:var(--amber)}
+.tl-month.m5 .tl-dot{background:#5a30c0}
+.tl-month.m6 .tl-dot{background:var(--ink)}
+.tl-month-num{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:.5rem}
+.tl-month h4{font-family:var(--ff-body);font-size:.9rem;font-weight:700;color:var(--ink);text-align:center;line-height:1.25;margin-bottom:.4rem;letter-spacing:-.01em}
+.tl-month p{font-size:.72rem;color:var(--ink3);text-align:center;line-height:1.5}
+.tl-skills-gained{margin-top:3rem;display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem}
+.tsk{background:var(--cream2);border:1px solid var(--border);border-radius:var(--r-md);padding:.85rem .75rem;text-align:center}
+.tsk-level{font-family:var(--ff-body);font-size:1.4rem;font-weight:700;color:var(--amber);letter-spacing:-.03em;line-height:1}
+.tsk-label{font-size:.65rem;color:var(--ink4);margin-top:4px;line-height:1.3}
+
+/* ── ROI / CAREER TRAJECTORY ── */
+.roi-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;margin-top:3.5rem}
+.roi-left{}
+.roi-comparison{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.roi-row{display:grid;grid-template-columns:160px 1fr 1fr;gap:.5rem;align-items:center;font-size:.82rem}
+.roi-row.header{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:.25rem}
+.roi-row span:first-child{color:var(--ink3)}
+.roi-pill{padding:6px 12px;border-radius:100px;text-align:center;font-weight:600;font-size:.78rem}
+.roi-pill.low{background:var(--cream2);color:var(--ink4)}
+.roi-pill.high{background:var(--amber-light);color:var(--amber)}
+.roi-pill.great{background:rgba(60,52,137,.1);color:#3c3489}
+.roi-cta-box{margin-top:2rem;background:var(--amber-light);border:1px solid rgba(124,78,228,.25);border-radius:var(--r-lg);padding:1.5rem}
+.roi-cta-box p{font-size:.875rem;color:var(--ink2);line-height:1.65}
+.roi-cta-box strong{color:var(--amber)}
+.roi-right{}
+.trajectory-card{background:var(--ink);border-radius:var(--r-xl);padding:2.5rem;color:var(--cream)}
+.trj-title{font-family:var(--ff-body);font-size:1.2rem;font-weight:700;margin-bottom:1.75rem;letter-spacing:-.02em}
+.trj-steps{display:flex;flex-direction:column;gap:0}
+.trj-step{display:grid;grid-template-columns:60px 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid rgba(250,247,242,.07);position:relative}
+.trj-step:last-child{border-bottom:none}
+.trj-step-time{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-mid);padding-top:3px}
+.trj-step h4{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:4px}
+.trj-step p{font-size:.78rem;color:rgba(250,247,242,.5);line-height:1.55}
+.trj-salary{display:inline-block;margin-top:6px;font-size:.72rem;font-weight:700;background:rgba(168,125,232,.15);color:var(--amber-mid);padding:3px 10px;border-radius:100px;letter-spacing:.04em}
+
+/* ── MENTOR SYSTEM ── */
+.mentor-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.mentor-system{display:flex;flex-direction:column;gap:1.25rem}
+.ms-item{display:grid;grid-template-columns:52px 1fr;gap:1.25rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem;transition:all .22s}
+.ms-item:hover{border-color:rgba(124,78,228,.35);box-shadow:0 4px 20px rgba(124,78,228,.09)}
+.ms-icon{width:52px;height:52px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.ms-icon.amber{background:var(--amber-light)}
+.ms-icon.moss{background:#dce8f0}
+.ms-icon.gold{background:rgba(168,125,232,.12)}
+.ms-icon.ink{background:var(--cream2)}
+.ms-text h4{font-family:var(--ff-body);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:5px;letter-spacing:-.01em}
+.ms-text p{font-size:.82rem;color:var(--ink3);line-height:1.6}
+.ms-freq{display:inline-block;margin-top:6px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);background:var(--amber-light);padding:2px 8px;border-radius:100px}
+.accountability-card{background:linear-gradient(160deg,#1a0a3d 0%,var(--ink) 100%);border-radius:var(--r-xl);padding:2.5rem;color:var(--cream);position:sticky;top:90px}
+.ac-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-mid);margin-bottom:1.5rem}
+.ac-title{font-family:var(--ff-body);font-size:1.6rem;font-weight:700;letter-spacing:-.03em;line-height:1.2;margin-bottom:1rem}
+.ac-body{font-size:.875rem;color:rgba(250,247,242,.6);line-height:1.7;margin-bottom:2rem}
+.ac-checklist{display:flex;flex-direction:column;gap:.75rem}
+.ac-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.82rem;color:rgba(250,247,242,.8)}
+.ac-check{width:20px;height:20px;border-radius:50%;background:rgba(168,125,232,.2);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;color:var(--amber-mid)}
+.ac-divider{height:1px;background:rgba(250,247,242,.07);margin:1.5rem 0}
+.ac-promise{font-size:.82rem;color:rgba(250,247,242,.45);font-style:italic;line-height:1.6}
+
+/* ── WHAT YOU DO ── */
+.do-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:3rem}
+.do-card{border-radius:var(--r-lg);padding:1.75rem;border:1px solid var(--border);background:var(--cream);transition:all .22s;position:relative;overflow:hidden}
+.do-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.do-card:hover{border-color:rgba(124,78,228,.3);transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,78,228,.1)}
+.do-card:hover::after{transform:scaleX(1)}
+.do-num{font-family:var(--ff-body);font-size:3rem;font-weight:700;color:var(--cream2);-webkit-text-stroke:1.5px rgba(124,78,228,.25);line-height:1;margin-bottom:.75rem}
+.do-card h4{font-family:var(--ff-body);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
+.do-card p{font-size:.82rem;color:var(--ink3);line-height:1.6}
+
+/* ── DOMAINS ── */
+.domain-wrap{margin-top:3rem}
+.domain-ticker{display:flex;gap:1rem;flex-wrap:wrap}
+.domain-pill{display:flex;align-items:center;gap:10px;background:var(--cream);border:1px solid var(--border);border-radius:100px;padding:.6rem 1.25rem;font-size:.82rem;font-weight:500;color:var(--ink2);transition:all .2s;cursor:default}
+.domain-pill:hover{border-color:var(--amber);background:var(--amber-light);color:var(--amber)}
+.domain-pill span{font-size:1rem}
+.domain-note{margin-top:1.5rem;font-size:.82rem;color:var(--ink4);font-style:italic}
+
+/* ── FINAL CTA ── */
+.cta-section{background:var(--cream2);padding:7rem 2.5rem;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,78,228,.14) 0%,transparent 70%)}
+.cta-section::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(168,125,232,.08) 0%,transparent 70%)}
+.cta-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.cta-inner .section-title{font-size:clamp(2.4rem,5vw,3.6rem)}
+.cta-body{font-size:1.05rem;color:var(--ink3);line-height:1.75;margin:1.5rem 0 2.5rem;font-weight:400}
+.cta-btn{background:var(--amber);color:#fff;border:none;border-radius:var(--r-lg);padding:1.1rem 3rem;font-family:var(--ff-body);font-size:1.05rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 6px 30px rgba(124,78,228,.4);transition:all .2s}
+.cta-btn:hover{background:#5a30c0;transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,78,228,.5)}
+.cta-sub{margin-top:1.5rem;font-size:.8rem;color:var(--ink4)}
+.cta-domains{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.25rem}
+.cd-tag{font-size:.72rem;background:var(--cream);border:1px solid var(--border);border-radius:100px;padding:4px 12px;color:var(--ink3)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:2.5rem;text-align:center}
+footer p{font-size:.78rem;color:rgba(250,247,242,.3)}
+footer strong{color:rgba(250,247,242,.5)}
+
+/* ── ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:5rem 2rem}
+  .story-grid,.roi-layout,.mentor-layout{grid-template-columns:1fr}
+  .timeline-track{flex-direction:column;gap:1.5rem}
+  .timeline-track::before{display:none}
+  .tl-skills-gained{grid-template-columns:repeat(3,1fr)}
+  nav .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" style="font-family:var(--ff-body);font-size:.78rem;font-weight:600;color:var(--ink3);text-decoration:none;border:1px solid var(--border);border-radius:var(--r-sm);padding:.35rem .85rem;display:inline-flex;align-items:center;gap:6px;">← All Tracks</a><a class="logo" href="index.html"><em>Kurela</em>Cognisive</a>
+    <ul class="nav-links">
+      <li><a href="#journey">The Journey</a></li>
+      <li><a href="#timeline">Growth Timeline</a></li>
+      <li><a href="#roi">Career ROI</a></li>
+      <li><a href="#mentorship">Mentorship</a></li>
+    </ul>
+    <a class="nav-cta" href="index.html#register">Register Now</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-chapter reveal">Track 03 — The Strategist</div>
+    <h1 class="reveal reveal-delay-1">
+      The <i>full journey</i><br>from student<br>to professional.
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">Not a sprint. Not a shortcut. A structured, multi-month commitment — across AI, Data, Web, Security, and more — that takes you from where you are to where you want to be.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a class="btn-primary" href="#apply">Begin Your Journey →</a>
+      <a class="btn-outline" href="#journey">See the Transformation</a>
+    </div>
+    <div class="hero-proof reveal">
+      <div>
+        <div class="proof-num">6+</div>
+        <div class="proof-label">Domains available</div>
+      </div>
+      <div>
+        <div class="proof-num">3</div>
+        <div class="proof-label">Program phases</div>
+      </div>
+      <div>
+        <div class="proof-num">6mo</div>
+        <div class="proof-label">Full program depth</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="transform-card reveal">
+      <div class="tc-label">Your transformation snapshot</div>
+      <div class="tc-states">
+        <div class="tc-state before">
+          <div class="tc-state-label">Before</div>
+          <div class="tc-state-val">Learning theory, no real output</div>
+        </div>
+        <div class="tc-arrow">→</div>
+        <div class="tc-state after">
+          <div class="tc-state-label">After</div>
+          <div class="tc-state-val">Portfolio + experience + confidence</div>
+        </div>
+      </div>
+      <div class="tc-skills">
+        <div class="tc-skill">
+          <span style="min-width:120px;color:var(--ink3)">Domain skills</span>
+          <div class="tc-skill-bar"><div class="tc-skill-fill" style="width:90%"></div></div>
+          <span style="font-size:.72rem;color:var(--amber);font-weight:600;min-width:30px">90%</span>
+        </div>
+        <div class="tc-skill">
+          <span style="min-width:120px;color:var(--ink3)">Work discipline</span>
+          <div class="tc-skill-bar"><div class="tc-skill-fill" style="width:85%"></div></div>
+          <span style="font-size:.72rem;color:var(--amber);font-weight:600;min-width:30px">85%</span>
+        </div>
+        <div class="tc-skill">
+          <span style="min-width:120px;color:var(--ink3)">Portfolio depth</span>
+          <div class="tc-skill-bar"><div class="tc-skill-fill" style="width:95%"></div></div>
+          <span style="font-size:.72rem;color:var(--amber);font-weight:600;min-width:30px">95%</span>
+        </div>
+        <div class="tc-skill">
+          <span style="min-width:120px;color:var(--ink3)">Job readiness</span>
+          <div class="tc-skill-bar"><div class="tc-skill-fill" style="width:88%"></div></div>
+          <span style="font-size:.72rem;color:var(--amber);font-weight:600;min-width:30px">88%</span>
+        </div>
+      </div>
+      <div class="tc-note">Applies to any domain — AI, Data, Web, Security & more</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRANSFORMATION STORY ── -->
+<section class="section" id="journey">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">The Before & After</div>
+      <h2 class="section-title">Everyone starts somewhere.<br><i>Here's where you end up.</i></h2>
+      <p class="section-body">The long-term program is built around a real student arc — the kind that takes time, honesty, and consistent effort to complete.</p>
+    </div>
+    <div class="story-grid reveal">
+      <div class="story-card before">
+        <div class="story-card-tag">Before the Program</div>
+        <h3>You have potential, but no proof.</h3>
+        <p>You know concepts. You've watched tutorials. But you haven't built anything substantial — and you know it.</p>
+        <ul class="story-list">
+          <li>No real projects to show</li>
+          <li>Unclear career direction</li>
+          <li>Skills not tested in context</li>
+          <li>No sense of professional workflows</li>
+          <li>Interviews feel intimidating</li>
+        </ul>
+      </div>
+      <div class="story-card during">
+        <div class="story-card-tag">During the Program</div>
+        <h3>You build. You struggle. You grow.</h3>
+        <p>Month by month, you take on real tasks, receive direct feedback, and start seeing what it means to work in your domain.</p>
+        <ul class="story-list">
+          <li>First real project ships in month 2</li>
+          <li>Internship tasks feel familiar by month 3</li>
+          <li>Feedback loops tighten your thinking</li>
+          <li>Domain vocabulary becomes natural</li>
+          <li>Confidence builds with each milestone</li>
+        </ul>
+      </div>
+      <div class="story-card after">
+        <div class="story-card-tag">After the Program</div>
+        <h3>You have evidence. You have depth.</h3>
+        <p>You don't just say you can do things — you can point to exactly what you built, what you learned, and how you grew.</p>
+        <ul class="story-list">
+          <li>A real portfolio, not just certificates</li>
+          <li>Internship-level work experience</li>
+          <li>Deep problem-solving capability</li>
+          <li>Industry-standard workflow fluency</li>
+          <li>Job-ready across your chosen domain</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GROWTH TIMELINE ── -->
+<section class="section section-alt" id="timeline">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Month-by-Month Growth</div>
+      <h2 class="section-title">Every month moves<br><i>the needle forward.</i></h2>
+      <p class="section-body">The program maps your skill growth across 6 months — each phase building directly on the last. Nothing is filler. Every month has a purpose.</p>
+    </div>
+    <div class="timeline-wrap reveal">
+      <div class="timeline-track">
+        <div class="tl-month m1">
+          <div class="tl-dot"></div>
+          <div class="tl-month-num">Month 1</div>
+          <h4>Foundations & Setup</h4>
+          <p>Domain deep-dive. Tools, environment, first project scoped.</p>
+        </div>
+        <div class="tl-month m2">
+          <div class="tl-dot"></div>
+          <div class="tl-month-num">Month 2</div>
+          <h4>First Real Build</h4>
+          <p>Core project built and shipped. First feedback received.</p>
+        </div>
+        <div class="tl-month m3">
+          <div class="tl-dot"></div>
+          <div class="tl-month-num">Month 3</div>
+          <h4>Internship Begins</h4>
+          <p>Real tasks. Industry workflows. Work discipline established.</p>
+        </div>
+        <div class="tl-month m4">
+          <div class="tl-dot"></div>
+          <div class="tl-month-num">Month 4</div>
+          <h4>Depth & Ownership</h4>
+          <p>Complex problem-solving. Full task ownership. Portfolio grows.</p>
+        </div>
+        <div class="tl-month m5">
+          <div class="tl-dot"></div>
+          <div class="tl-month-num">Month 5</div>
+          <h4>Advanced Application</h4>
+          <p>End-to-end delivery. Peer-level contribution. Refinement.</p>
+        </div>
+        <div class="tl-month m6">
+          <div class="tl-dot"></div>
+          <div class="tl-month-num">Month 6</div>
+          <h4>Job-Ready</h4>
+          <p>Portfolio polished. Interview prep. Ready to compete.</p>
+        </div>
+      </div>
+      <div class="tl-skills-gained reveal reveal-delay-1">
+        <div class="tsk"><div class="tsk-level">1×</div><div class="tsk-label">Domain awareness</div></div>
+        <div class="tsk"><div class="tsk-level">2×</div><div class="tsk-label">Tool fluency</div></div>
+        <div class="tsk"><div class="tsk-level">4×</div><div class="tsk-label">Build speed</div></div>
+        <div class="tsk"><div class="tsk-level">6×</div><div class="tsk-label">Work discipline</div></div>
+        <div class="tsk"><div class="tsk-level">8×</div><div class="tsk-label">Problem-solving</div></div>
+        <div class="tsk"><div class="tsk-level">∞</div><div class="tsk-label">Career readiness</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAREER ROI ── -->
+<section class="section" id="roi">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Long-Term Career ROI</div>
+      <h2 class="section-title">What this investment<br><i>actually returns.</i></h2>
+    </div>
+    <div class="roi-layout reveal">
+      <div class="roi-left">
+        <p class="section-body">Time spent in this program is an investment in your professional trajectory. Here's how it compounds over the first few years of your career.</p>
+        <div class="roi-comparison">
+          <div class="roi-row header">
+            <span>Outcome</span>
+            <span style="text-align:center">Without program</span>
+            <span style="text-align:center">With program</span>
+          </div>
+          <div class="roi-row">
+            <span>Portfolio strength</span>
+            <div class="roi-pill low">Weak / absent</div>
+            <div class="roi-pill great">Real projects</div>
+          </div>
+          <div class="roi-row">
+            <span>Interview readiness</span>
+            <div class="roi-pill low">Unprepared</div>
+            <div class="roi-pill great">Confident + proven</div>
+          </div>
+          <div class="roi-row">
+            <span>Time to first job</span>
+            <div class="roi-pill low">12–18 months</div>
+            <div class="roi-pill high">6–9 months</div>
+          </div>
+          <div class="roi-row">
+            <span>Starting salary range</span>
+            <div class="roi-pill low">Below average</div>
+            <div class="roi-pill great">Market rate +</div>
+          </div>
+          <div class="roi-row">
+            <span>Domain credibility</span>
+            <div class="roi-pill low">Theory only</div>
+            <div class="roi-pill great">Proven in practice</div>
+          </div>
+        </div>
+        <div class="roi-cta-box">
+          <p>Short-term programs give you <strong>exposure</strong>. This program gives you <strong>depth</strong> — the kind that changes what jobs you can apply for, and what you can say in the room.</p>
+        </div>
+      </div>
+      <div class="roi-right">
+        <div class="trajectory-card">
+          <div class="trj-title">Career Trajectory After the Program</div>
+          <div class="trj-steps">
+            <div class="trj-step">
+              <div class="trj-step-time">Month 6</div>
+              <div>
+                <h4>Program complete</h4>
+                <p>Portfolio ready, internship experience documented, interview-prepared across your domain.</p>
+                <div class="trj-salary">Ready to apply</div>
+              </div>
+            </div>
+            <div class="trj-step">
+              <div class="trj-step-time">0–3 mo</div>
+              <div>
+                <h4>Entry-level / Junior role</h4>
+                <p>First job in your chosen domain. Real experience from the program sets you apart from graduates with no portfolio.</p>
+                <div class="trj-salary">↑ First salary</div>
+              </div>
+            </div>
+            <div class="trj-step">
+              <div class="trj-step-time">Year 1</div>
+              <div>
+                <h4>Rapid skill compounding</h4>
+                <p>You already know how real work feels. You ramp faster, deliver sooner, and earn trust earlier than peers.</p>
+                <div class="trj-salary">↑↑ Faster growth</div>
+              </div>
+            </div>
+            <div class="trj-step">
+              <div class="trj-step-time">Year 2–3</div>
+              <div>
+                <h4>Mid-level contribution</h4>
+                <p>The depth from the program shows up in promotion timelines, salary reviews, and the complexity of work you're trusted with.</p>
+                <div class="trj-salary">↑↑↑ Career advantage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU WILL DO ── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">What You'll Actually Do</div>
+      <h2 class="section-title">Real work.<br><i>Real responsibility.</i></h2>
+    </div>
+    <div class="do-grid reveal">
+      <div class="do-card">
+        <div class="do-num">01</div>
+        <h4>Build domain projects</h4>
+        <p>Work on actual projects in your field — scoped, built, documented, and deployed across the program.</p>
+      </div>
+      <div class="do-card">
+        <div class="do-num">02</div>
+        <h4>Own real tasks</h4>
+        <p>Take responsibility for deliverables. Not exercises — work that has to be finished and reviewed.</p>
+      </div>
+      <div class="do-card">
+        <div class="do-num">03</div>
+        <h4>Follow industry workflows</h4>
+        <p>Sprints, reviews, documentation, iteration. The rhythms professionals actually use.</p>
+      </div>
+      <div class="do-card">
+        <div class="do-num">04</div>
+        <h4>Improve through feedback</h4>
+        <p>Every piece of work is reviewed. You learn what good looks like by being told what yours isn't, yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MENTORSHIP SYSTEM ── -->
+<section class="section" id="mentorship">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Mentorship & Accountability</div>
+      <h2 class="section-title">Not just guidance —<br><i>a system that keeps you moving.</i></h2>
+      <p class="section-body">The difference between giving up at month 2 and arriving at month 6 job-ready is a structured support system that holds you accountable and shows up when you get stuck.</p>
+    </div>
+    <div class="mentor-layout reveal">
+      <div class="mentor-system">
+        <div class="ms-item">
+          <div class="ms-icon amber">🧭</div>
+          <div class="ms-text">
+            <h4>Weekly check-ins</h4>
+            <p>Not optional. Every week, progress is reviewed and obstacles are addressed before they derail momentum.</p>
+            <span class="ms-freq">Every week</span>
+          </div>
+        </div>
+        <div class="ms-item">
+          <div class="ms-icon moss">📋</div>
+          <div class="ms-text">
+            <h4>Work reviews & direct feedback</h4>
+            <p>Your actual deliverables are reviewed — not generically, but specifically. What worked, what didn't, what to fix.</p>
+            <span class="ms-freq">Per deliverable</span>
+          </div>
+        </div>
+        <div class="ms-item">
+          <div class="ms-icon gold">🔒</div>
+          <div class="ms-text">
+            <h4>Accountability checkpoints</h4>
+            <p>Each phase ends with a structured checkpoint — you must demonstrate readiness before moving forward.</p>
+            <span class="ms-freq">Per phase</span>
+          </div>
+        </div>
+        <div class="ms-item">
+          <div class="ms-icon ink">🚧</div>
+          <div class="ms-text">
+            <h4>Blocker resolution</h4>
+            <p>When you're stuck — technically or mentally — there's a path to get unstuck. No one gets left behind a wall.</p>
+            <span class="ms-freq">As needed</span>
+          </div>
+        </div>
+        <div class="ms-item">
+          <div class="ms-icon amber">🎯</div>
+          <div class="ms-text">
+            <h4>Career readiness coaching</h4>
+            <p>In the final phase, mentorship shifts to interview prep, portfolio framing, and how to present your experience.</p>
+            <span class="ms-freq">Month 5–6</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="accountability-card">
+          <div class="ac-eyebrow">The Accountability Contract</div>
+          <div class="ac-title">We show up. You show up. Results follow.</div>
+          <div class="ac-body">This isn't a course you buy and forget. It's a commitment — from you, and from us. Every week is accounted for. Every month has a milestone. Every piece of work gets seen.</div>
+          <div class="ac-checklist">
+            <div class="ac-item">
+              <div class="ac-check">✓</div>
+              <span>Weekly progress tracked and documented</span>
+            </div>
+            <div class="ac-item">
+              <div class="ac-check">✓</div>
+              <span>Mentor assigned to your domain and goals</span>
+            </div>
+            <div class="ac-item">
+              <div class="ac-check">✓</div>
+              <span>Structured phase gates — no skipping ahead</span>
+            </div>
+            <div class="ac-item">
+              <div class="ac-check">✓</div>
+              <span>Feedback on every major deliverable</span>
+            </div>
+            <div class="ac-item">
+              <div class="ac-check">✓</div>
+              <span>Support when you're blocked, not just at milestones</span>
+            </div>
+            <div class="ac-item">
+              <div class="ac-check">✓</div>
+              <span>You leave with documented, verifiable experience</span>
+            </div>
+          </div>
+          <div class="ac-divider"></div>
+          <div class="ac-promise">"The long-term program is not for everyone. It's for students who are serious enough to commit — and smart enough to know that serious commitment is what the job market rewards."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOMAINS ── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Supported Domains</div>
+      <h2 class="section-title">Your field.<br><i>Your depth.</i></h2>
+      <p class="section-body">Every section of this program adapts to the domain you're building a career in. The structure is the same. The depth is the same. The content is yours.</p>
+    </div>
+    <div class="domain-wrap reveal">
+      <div class="domain-ticker">
+        <div class="domain-pill"><span>🤖</span> Artificial Intelligence</div>
+        <div class="domain-pill"><span>🧠</span> Machine Learning</div>
+        <div class="domain-pill"><span>📊</span> Data Science</div>
+        <div class="domain-pill"><span>🌐</span> Web Development</div>
+        <div class="domain-pill"><span>🔐</span> Cybersecurity</div>
+        <div class="domain-pill"><span>☁️</span> Cloud & DevOps</div>
+        <div class="domain-pill"><span>📱</span> Mobile Development</div>
+        <div class="domain-pill"><span>⚙️</span> Backend Engineering</div>
+      </div>
+      <p class="domain-note">Don't see your domain? Reach out — we support more fields than listed here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="cta-section" id="apply">
+  <div class="cta-inner reveal">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:1.25rem">Start Your Journey</div>
+    <h2 class="section-title" style="text-align:center;max-width:600px;margin:0 auto 0">
+      Invest six months.<br><i>Change your trajectory.</i>
+    </h2>
+    <p class="cta-body">The difference between where you are and where you want to be isn't talent — it's time, structure, and real work. This program gives you all three. The only question is whether you're ready to commit.</p>
+    <a class="cta-btn" href="#">Apply Now — Begin Your Journey →</a>
+    <div class="cta-sub">Applications open across all domains</div>
+    <div class="cta-domains">
+      <span class="cd-tag">AI / ML</span>
+      <span class="cd-tag">Data Science</span>
+      <span class="cd-tag">Web Dev</span>
+      <span class="cd-tag">Cybersecurity</span>
+      <span class="cd-tag">Cloud & DevOps</span>
+      <span class="cd-tag">Mobile</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 <strong>Kurela</strong> Cognisive</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+  })
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
